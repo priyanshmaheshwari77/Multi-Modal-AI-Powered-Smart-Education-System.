@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment Variables
+.env
+**/.env
+
+# Local Databases / User Data
+server/data/users.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log
+
+# IDE / Tooling
+.vscode/
+.idea/
+.gemini/
+.git/

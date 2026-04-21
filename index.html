@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCreator AI | Multimodal Learning Platform</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        // Dashboard Auth Guard
+        if (!localStorage.getItem('edu_token')) {
+            window.location.href = './login.html';
+        }
+    </script>
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📘</span>
+                    <h2>EduCreator</h2>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <button id="new-btn" class="btn-primary">
+                    <span class="icon">+</span> New Topic
+                </button>
+                <div class="history-section">
+                    <h3>Recent Topics</h3>
+                    <ul id="history-list">
+                        <!-- History items will be injected here -->
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div id="user-profile" class="user-profile">
+                    <div class="user-info">
+                        <span class="user-avatar">👤</span>
+                        <div class="user-details">
+                            <h4 id="profile-name">Loading...</h4>
+                            <p id="profile-email">...</p>
+                        </div>
+                    </div>
+                    <button id="logout-btn" class="btn-logout">Logout</button>
+                </div>
+                <p>Powered by AI</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="content-header">
+                <div class="search-container">
+                    <input type="text" id="topic-input" placeholder="What do you want to learn today?" autocomplete="off">
+                    <button id="generate-btn">Generate Content</button>
+                </div>
+            </header>
+
+            <section id="results-area" class="results-area hidden">
+                <div class="loading-container hidden" id="loading">
+                    <div class="spinner"></div>
+                    <p>Creating your educational journey...</p>
+                </div>
+
+                <div id="content-display" class="content-display">
+                    <!-- Multimodal sections will be injected here -->
+                </div>
+            </section>
+
+            <section id="welcome-area" class="welcome-area">
+                <div class="hero">
+                    <h1>Transform Any Topic into <span class="gradient-text">Mastery</span>.</h1>
+                    <p>Generate explanations, notes, flashcards, and quizzes in seconds.</p>
+                    <div class="suggestions">
+                        <button class="suggest-btn">Quantum Physics</button>
+                        <button class="suggest-btn">Photosynthesis</button>
+                        <button class="suggest-btn">Blockchain Technology</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
